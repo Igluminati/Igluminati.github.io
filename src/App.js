@@ -7,11 +7,12 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import HomeIcon from "@mui/icons-material/Home";
 import { Slide } from "react-awesome-reveal";
-import TryberImage from "./images/Tryber.jpg";
+import SeptaImage from "./images/Septa.png";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
+import YoutubeEmbed from "./YouTubeEmbed";
 
 const darkThemeTeal = createTheme({
   palette: {
@@ -33,22 +34,22 @@ const darkThemeTeal = createTheme({
 
 export default function App() {
   const scrollToProjects = () => {
-    const element = document.getElementById("scrollTarget");
+    const element = document.getElementById("septaScrollTarget");
     element.scrollIntoView({ behavior: "smooth" });
   };
   return (
     <ThemeProvider theme={darkThemeTeal}>
-      <AppBar position="static">
+      <AppBar position="static" sx={{ boxShadow: "none" }}>
         <Box sx={{ display: "flex", justifyContent: "center" }}>
-          <Button variant="contained" onClick={scrollToProjects}>
+          <Button variant="contained" onClick={scrollToProjects} sx={{ backgroundColor: "#00ADB5", marginRight: "1rem", borderRadius: "4px" }}>
             Projects
           </Button>
-          <Button href="/" color="text" variant="text">
+          <Button href="/" color="text" variant="text" sx={{ color: "#EEEEEE" }}>
             <HomeIcon />
           </Button>
         </Box>
       </AppBar>
-      <Box sx={{ flexDirection: "column", bgcolor: "background.main" }}>
+      <Box sx={{ flexDirection: "column", bgcolor: "#222831", minHeight: "100vh", padding: "2rem", textAlign: "center" }}>
         <Box
           sx={{
             display: "flex",
@@ -58,85 +59,79 @@ export default function App() {
             minHeight: "70vh",
           }}
         >
-          <Typography variant="h1" color="secondary.main">
+          <Typography variant="h1" color="#00ADB5" sx={{ fontSize: "4rem", marginBottom: "2rem" }}>
             Igli Kristo
           </Typography>
-          <Typography variant="h2" color="secondary.mainGradient">
-            Work In Progress
-          </Typography>
         </Box>
-
         <Slide triggerOnce>
           <Box
-            id="scrollTarget"
+            id="septaScrollTarget"
             sx={{
-              color: "#762ac1",
               display: "flex",
-              height: "50vh",
-              justifyContent: "left",
-              marginTop: "17rem",
+              justifyContent: "center",
+              alignItems: "center",
+              minHeight: "50vh",
+              marginBottom: "5rem",
+              marginTop: "20rem"
             }}
           >
-            <img src={TryberImage} alt="Project 1" />
-
-            <Typography variant="body1" fontSize="128px">
-              Tryber
-            </Typography>
-            <Typography variant="body1" fontSize="32px">
-              Technology:
-              <ul>
+            <Box sx={{ backgroundColor: "#393E46", padding: "2rem", borderRadius: "4px", textAlign: "center" }}>
+              <Typography variant="body1" fontSize="2.5rem" sx={{ color: "#00ADB5", marginBottom: "1rem", fontWeight: "bold" }}>
+                Septa
+              </Typography>
+              <img src={SeptaImage} alt="Project 1" sx={{ width: "300px", height: "auto", marginBottom: "1rem" }} />
+              <Typography variant="body1" fontSize="1.5rem" sx={{ color: "#EEEEEE", marginBottom: "1rem" }}>
+                Technology:
+              </Typography>
+              <ul sx={{ listStyleType: "none", padding: 0, margin: 0 }}>
                 <li>React Native</li>
                 <li>Firebase (Firestore, Analytics, Authentication)</li>
                 <li>VS Code</li>
                 <li>Expo</li>
                 <li>Figma</li>
-                <li>Documentation</li>
               </ul>
-              Release Date: To Be Determined (TBD)
-            </Typography>
+              <Typography variant="body1" fontSize="1.5rem" sx={{ color: "#EEEEEE", marginBottom: "1rem", backgroundImage: "linear-gradient(to right, #FF00FF, #00FFFF)" }}>
+                Release Date: To Be Determined
+              </Typography>
+            </Box>
           </Box>
         </Slide>
         <Slide triggerOnce>
           <Box
+            id="oaxacaScrollTarget"
             sx={{
               display: "flex",
-              height: "50vh",
-              justifyContent: "left",
-              marginTop: "2rem",
+              justifyContent: "center",
+              alignItems: "center",
+              minHeight: "50vh",
             }}
           >
-            <img src={TryberImage} alt="Project 2" />
-            <Typography variant="body1" fontSize="128px">
-              Tryber
-            </Typography>
-            <Typography variant="body1" fontSize="64px">
-              Project 2 Description
-            </Typography>
+            <Box sx={{ backgroundColor: "#393E46", padding: "2rem", borderRadius: "4px", textAlign: "center" }}>
+              <Typography variant="body1" fontSize="2.5rem" sx={{ color: "#00ADB5", marginBottom: "1rem", fontWeight: "bold" }}>
+                Oaxaca Restaurant Management System
+              </Typography>
+              <YoutubeEmbed embedId="PpJfEVGBtPg" sx={{ width: "560px", height: "315px", marginBottom: "1rem" }} />
+              <Typography variant="body1" fontSize="1.5rem" sx={{ color: "#EEEEEE", marginBottom: "1rem" }}>
+                Technology:
+              </Typography>
+              <ul sx={{ listStyleType: "none", padding: 0, margin: 0 }}>
+                <li>PHP</li>
+                <li>Trello</li>
+                <li>HTML & CSS</li>
+                <li>PHPMyAdmin</li>
+                <li>Figma</li>
+              </ul>
+              <Typography variant="body1" fontSize="1.5rem" sx={{ color: "#EEEEEE", marginBottom: "1rem" }}>
+                Project description:
+              </Typography>
+              <Typography variant="body1" fontSize="1.5rem" sx={{ color: "#EEEEEE", marginBottom: "2rem" }}>
+                I took on the role of Scrum Master in a team project focused on developing a restaurant management system. We successfully utilized Trello as a task management tool to assign and track project tasks, ensuring efficient project progress and timely completion.
+              </Typography>
+              <Typography variant="body1" fontSize="1.5rem" sx={{ color: "#EEEEEE", marginBottom: "1rem", backgroundImage: "linear-gradient(to right, #FF00FF, #00FFFF)" }}>
+                Release Date: April 2023
+              </Typography>
+            </Box>
           </Box>
-        </Slide>
-        <Slide triggerOnce>
-          <Card
-            sx={{ maxWidth: 2000, justifyContent: "right", marginTop: "2rem" }}
-          >
-            <CardMedia
-              sx={{ height: 140 }}
-              image={TryberImage}
-              title="Green Iguana"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Lizard
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Lizards are a widespread group of squamate reptiles, with over
-                6,000 species, ranging across all continents except Antarctica.
-              </Typography>
-            </CardContent>
-            <CardActions>
-              <Button size="small">Share</Button>
-              <Button size="small">Learn More</Button>
-            </CardActions>
-          </Card>
         </Slide>
       </Box>
     </ThemeProvider>
