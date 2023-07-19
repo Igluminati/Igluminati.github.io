@@ -34,7 +34,7 @@ const darkThemeTeal = createTheme({
 
 export default function App() {
   const scrollToProjects = () => {
-    const element = document.getElementById("scrollTarget");
+    const element = document.getElementById("septaScrollTarget");
     element.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -70,6 +70,7 @@ export default function App() {
               textAlign: "center",
               color: "#EEEEEE",
               marginBottom: "2rem",
+              marginTop: "20rem"
             }}
           >
             <Typography variant="h2" sx={{ color: "#00ADB5", marginBottom: "1rem", fontWeight: "bold" }}>
