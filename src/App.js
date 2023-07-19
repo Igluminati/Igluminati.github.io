@@ -34,9 +34,10 @@ const darkThemeTeal = createTheme({
 
 export default function App() {
   const scrollToProjects = () => {
-    const element = document.getElementById("septaScrollTarget");
+    const element = document.getElementById("scrollTarget");
     element.scrollIntoView({ behavior: "smooth" });
   };
+
   return (
     <ThemeProvider theme={darkThemeTeal}>
       <AppBar position="static" sx={{ boxShadow: "none" }}>
@@ -49,16 +50,8 @@ export default function App() {
           </Button>
         </Box>
       </AppBar>
-      <Box sx={{ flexDirection: "column", bgcolor: "#222831", minHeight: "100vh", padding: "2rem", textAlign: "center" }}>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            minHeight: "70vh",
-          }}
-        >
+      <Box sx={{ bgcolor: "#222831", minHeight: "100vh", padding: "2rem", textAlign: "center" }}>
+        <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", minHeight: "70vh" }}>
           <Typography variant="h1" color="#00ADB5" sx={{ fontSize: "4rem", marginBottom: "2rem" }}>
             Igli Kristo
           </Typography>
@@ -70,30 +63,32 @@ export default function App() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              minHeight: "50vh",
-              marginBottom: "5rem",
-              marginTop: "20rem"
+              flexDirection: "column",
+              bgcolor: "#393E46",
+              padding: "2rem",
+              borderRadius: "4px",
+              textAlign: "center",
+              color: "#EEEEEE",
+              marginBottom: "2rem",
             }}
           >
-            <Box sx={{ backgroundColor: "#393E46", padding: "2rem", borderRadius: "4px", textAlign: "center" }}>
-              <Typography variant="body1" fontSize="2.5rem" sx={{ color: "#00ADB5", marginBottom: "1rem", fontWeight: "bold" }}>
-                Septa
-              </Typography>
-              <img src={SeptaImage} alt="Project 1" sx={{ width: "300px", height: "auto", marginBottom: "1rem" }} />
-              <Typography variant="body1" fontSize="1.5rem" sx={{ color: "#EEEEEE", marginBottom: "1rem" }}>
-                Technology:
-              </Typography>
-              <ul sx={{ listStyleType: "none", padding: 0, margin: 0 }}>
-                <li>React Native</li>
-                <li>Firebase (Firestore, Analytics, Authentication)</li>
-                <li>VS Code</li>
-                <li>Expo</li>
-                <li>Figma</li>
-              </ul>
-              <Typography variant="body1" fontSize="1.5rem" sx={{ color: "#EEEEEE", marginBottom: "1rem", backgroundImage: "linear-gradient(to right, #FF00FF, #00FFFF)" }}>
-                Release Date: To Be Determined
-              </Typography>
-            </Box>
+            <Typography variant="h2" sx={{ color: "#00ADB5", marginBottom: "1rem", fontWeight: "bold" }}>
+              Septa
+            </Typography>
+            <img src={SeptaImage} alt="Project 1" sx={{ width: "100%", height: "auto", marginBottom: "1rem", maxWidth: "300px" }} />
+            <Typography variant="body1" sx={{ color: "#EEEEEE", marginBottom: "1rem" }}>
+              Technology:
+            </Typography>
+            <ul sx={{ listStyleType: "none", padding: 0, margin: 0 }}>
+              <li>React Native</li>
+              <li>Firebase (Firestore, Analytics, Authentication)</li>
+              <li>VS Code</li>
+              <li>Expo</li>
+              <li>Figma</li>
+            </ul>
+            <Typography variant="body1" sx={{ color: "#EEEEEE", marginBottom: "1rem", backgroundImage: "linear-gradient(to right, #FF00FF, #00FFFF)" }}>
+              Release Date: To Be Determined
+            </Typography>
           </Box>
         </Slide>
         <Slide triggerOnce>
@@ -103,34 +98,37 @@ export default function App() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              minHeight: "50vh",
+              flexDirection: "column",
+              bgcolor: "#393E46",
+              padding: "2rem",
+              borderRadius: "4px",
+              textAlign: "center",
+              color: "#EEEEEE",
             }}
           >
-            <Box sx={{ backgroundColor: "#393E46", padding: "2rem", borderRadius: "4px", textAlign: "center" }}>
-              <Typography variant="body1" fontSize="2.5rem" sx={{ color: "#00ADB5", marginBottom: "1rem", fontWeight: "bold" }}>
-                Oaxaca Restaurant Management System
-              </Typography>
-              <YoutubeEmbed embedId="PpJfEVGBtPg" sx={{ width: "560px", height: "315px", marginBottom: "1rem" }} />
-              <Typography variant="body1" fontSize="1.5rem" sx={{ color: "#EEEEEE", marginBottom: "1rem" }}>
-                Technology:
-              </Typography>
-              <ul sx={{ listStyleType: "none", padding: 0, margin: 0 }}>
-                <li>PHP</li>
-                <li>Trello</li>
-                <li>HTML & CSS</li>
-                <li>PHPMyAdmin</li>
-                <li>Figma</li>
-              </ul>
-              <Typography variant="body1" fontSize="1.5rem" sx={{ color: "#EEEEEE", marginBottom: "1rem" }}>
-                Project description:
-              </Typography>
-              <Typography variant="body1" fontSize="1.5rem" sx={{ color: "#EEEEEE", marginBottom: "2rem" }}>
-                I took on the role of Scrum Master in a team project focused on developing a restaurant management system. We successfully utilized Trello as a task management tool to assign and track project tasks, ensuring efficient project progress and timely completion.
-              </Typography>
-              <Typography variant="body1" fontSize="1.5rem" sx={{ color: "#EEEEEE", marginBottom: "1rem", backgroundImage: "linear-gradient(to right, #FF00FF, #00FFFF)" }}>
-                Release Date: April 2023
-              </Typography>
-            </Box>
+            <Typography variant="h2" sx={{ color: "#00ADB5", marginBottom: "1rem", fontWeight: "bold" }}>
+              Oaxaca Restaurant Management System
+            </Typography>
+            <YoutubeEmbed embedId="PpJfEVGBtPg" sx={{ width: "100%", height: "auto", marginBottom: "1rem", maxWidth: "560px" }} />
+            <Typography variant="body1" sx={{ color: "#EEEEEE", marginBottom: "1rem" }}>
+              Technology:
+            </Typography>
+            <ul sx={{ listStyleType: "none", padding: 0, margin: 0 }}>
+              <li>PHP</li>
+              <li>Trello</li>
+              <li>HTML & CSS</li>
+              <li>PHPMyAdmin</li>
+              <li>Figma</li>
+            </ul>
+            <Typography variant="body1" sx={{ color: "#EEEEEE", marginBottom: "1rem" }}>
+              Project description:
+            </Typography>
+            <Typography variant="body1" sx={{ color: "#EEEEEE", marginBottom: "2rem" }}>
+              I took on the role of Scrum Master in a team project focused on developing a restaurant management system. We successfully utilized Trello as a task management tool to assign and track project tasks, ensuring efficient project progress and timely completion.
+            </Typography>
+            <Typography variant="body1" sx={{ color: "#EEEEEE", marginBottom: "1rem", backgroundImage: "linear-gradient(to right, #FF00FF, #00FFFF)" }}>
+              Release Date: April 2023
+            </Typography>
           </Box>
         </Slide>
       </Box>
